@@ -6,6 +6,7 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { PHOTOURL, USERLOGO } from "../utils/constants";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -27,12 +28,12 @@ const Login = () => {
           const user = userCredential.user;
           console.log(user);
           updateProfile(user, {
-            displayName: name.current.value , photoURL: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg"
+            displayName: name.current.value , photoURL: USERLOGO
             
           }).then(() => {
             const {uid, email, displayName, photoURL} = auth.currentUser;
             dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));  
-            navigate('/browse')
+            // navigate('/browse')
             // Profile updated!
             // ...
           }).catch((error) => {
@@ -56,7 +57,7 @@ const Login = () => {
     // Signed in 
     const user = userCredential.user;
     console.log(user);
-    navigate('/browse')
+    // navigate('/browse')
 
     // ...
   })
@@ -78,7 +79,7 @@ const Login = () => {
         <Header />
       </div>
       <div className="absolute">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/77d35039-751f-4c3e-9c8d-1240c1ca6188/cf244808-d722-428f-80a9-052acdf158ec/IN-en-20231106-popsignuptwoweeks-perspective_alpha_website_large.jpg" />
+        <img src={PHOTOURL} />
       </div>
       <form className="w-3/12 absolute bg-black my-24 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
         <div className="mx-20">

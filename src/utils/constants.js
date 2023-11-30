@@ -15,3 +15,5 @@ export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/"
 export const SUPPORTED_LANGUAGE =[{identifier: 'en', name: 'English'},
 {identifier: 'hindi', name: 'Hindi'},{identifier: 'spanish', name: 'Spanish'},
 ]
+
+export const OPENAI_KEY ="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"

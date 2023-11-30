@@ -21,7 +21,6 @@ import { addTrailerVideo } from "../utils/movieSlice";
        dispatch(addTrailerVideo(trailer))
        
     }
-    console.log(movieId)
    
    useEffect(() =>{
     if (movieId) {

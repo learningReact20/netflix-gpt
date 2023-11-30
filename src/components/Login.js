@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { PHOTOURL, USERLOGO } from "../utils/constants";
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);

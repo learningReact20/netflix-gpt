@@ -1,7 +1,6 @@
 import React from 'react'
 import MovieList from './MovieList'
 import { useSelector } from 'react-redux'
-import { addNowPlayingMovies } from '../utils/movieSlice'
 
 const SecondaryContainer = () => {
     const moviesData = useSelector(store => store.movies?.nowPlayingMovies);
